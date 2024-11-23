@@ -8,15 +8,21 @@ Ce dépôt documente la configuration et l'intégration d'une architecture Jenki
 - Un serveur **Jenkins Master** pour la gestion et l'orchestration des pipelines CI/CD.
 - Un nœud **Jenkins Agent** configuré avec Docker pour exécuter les tâches de build et déploiement.
 
+![image](https://github.com/user-attachments/assets/d234230a-bc9c-48f7-8752-edf19159a0e7)
+
 ## Fonctionnalités
 - Authentification sécurisée par clé SSH entre Master et Agent.
+  
+ ![image](https://github.com/user-attachments/assets/9bb8f6e0-18f5-4668-a9ad-bdcd899f6834)
+
 - Configuration de Jenkins pour désactiver le Master comme nœud de build.
+
+![image](https://github.com/user-attachments/assets/730d4575-322f-4f0e-bc54-0b50edc35fb2)
+
 - Support pour Docker sur l'Agent pour exécuter des tâches dans des conteneurs.
 
-## Contenu du dépôt
-- **Documentation** : Guide étape par étape pour installer Jenkins Master et Agent.
-- **Scripts** : Fichiers d'exemple pour configurer les clés SSH et gérer les permissions.
-- **Configurations** : Modèle de configuration pour un nœud Agent dans l'interface Web Jenkins.
+![image](https://github.com/user-attachments/assets/2d981b93-c806-4c52-b3a9-7ba81fef6a8b)
+
 
 ## Objectif
 Automatiser les workflows CI/CD tout en déléguant les exécutions de tâches à des nœuds distants pour une meilleure scalabilité.
