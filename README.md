@@ -34,7 +34,7 @@ Automatiser les workflows CI/CD tout en déléguant les exécutions de tâches �
 ## Créer un certificat SSL auto-signé et acceder via https pour un access securisé
 ![image](https://github.com/user-attachments/assets/a29602f0-4917-4bf9-9e0e-0df6e9a99af4)
 ![image](https://github.com/user-attachments/assets/7147638d-f529-438f-be00-180428958c72)
-
+![image](https://github.com/user-attachments/assets/791912ea-1a5e-4989-bc3f-504e4f366501)
 
 
 
