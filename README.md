@@ -19,6 +19,8 @@ Ce dépôt documente la configuration et l'intégration d'une architecture Jenki
 
 ![image](https://github.com/user-attachments/assets/730d4575-322f-4f0e-bc54-0b50edc35fb2)
 
+![image](https://github.com/user-attachments/assets/d0838776-0166-4052-882b-f2025e40617d)
+
 - Support pour Docker sur l'Agent pour exécuter des tâches dans des conteneurs.
 
 ![image](https://github.com/user-attachments/assets/2d981b93-c806-4c52-b3a9-7ba81fef6a8b)
