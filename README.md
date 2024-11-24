@@ -52,6 +52,8 @@ $ sudo openssl req -x509 -newkey rsa:4096 -keyout /etc/ssl/private/jenkins.local
     $ sudo apt update
     $ sudo apt-get -y install postgresql postgresql-contrib
     $ sudo systemctl enable postgresql
+  ![image](https://github.com/user-attachments/assets/65b4f54c-78bd-448e-b483-764f62250ff2)
+
 ## Create Database for Sonarqube
     $ sudo passwd postgres
     $ su - postgres
@@ -127,6 +129,8 @@ $ sudo vim /etc/systemd/system/sonar.service
      $ sudo systemctl start sonar
      $ sudo systemctl enable sonar
      $ sudo systemctl status sonar
+![image](https://github.com/user-attachments/assets/14f2ecff-bb38-4b1d-b966-fda03ede71ce)
+
 
 ## Watch log files and monitor for startup
      $ sudo tail -f /opt/sonarqube/logs/sonar.log
