@@ -160,10 +160,12 @@ $ sudo vim /etc/systemd/system/sonar.service
      $ sudo tail -f /opt/sonarqube/logs/sonar.log
 ##  configurer un Reverse Proxy Nginx avec SonarQube et HTTPS pour sonarqube
 ![image](https://github.com/user-attachments/assets/ef2e0ed0-a21b-43bc-84ef-8253754e4291)
-## Résultat du Pipeline Jenkins pour le Projet DevOps - Test de Bon Fonctionnement des Stages : Checkout, Build, Test, Analyse SonarQube, Qualité, Build & Push Docker,et Cleanup.
-![image](https://github.com/user-attachments/assets/9f8106b7-e237-49bb-94b1-907a83414fc8)
+## Résultat du Pipeline Jenkins pour le Projet DevOps - Test de Bon Fonctionnement des Stages : Checkout, Build, Test, Analyse SonarQube, Qualité, Build & Push Docker,trivy scan ,et Cleanup.
+
+![image](https://github.com/user-attachments/assets/4a613e80-993a-4704-ab09-ce4776a5485f)
+
 ### image dans dockerhub(version d'image  pour chaque test)
-![image](https://github.com/user-attachments/assets/6ea5d1bb-b3d5-4b95-9214-ee5ee277cf04)
+![image](https://github.com/user-attachments/assets/bf39204b-30a1-43a2-8f49-953f2be84abc)
 
 
 
