@@ -162,6 +162,9 @@ $ sudo vim /etc/systemd/system/sonar.service
 ![image](https://github.com/user-attachments/assets/ef2e0ed0-a21b-43bc-84ef-8253754e4291)
 ## Résultat du Pipeline Jenkins pour le Projet DevOps - Test de Bon Fonctionnement des Stages : Checkout, Build, Test, Analyse SonarQube, Qualité, Build & Push Docker,et Cleanup.
 ![image](https://github.com/user-attachments/assets/9f8106b7-e237-49bb-94b1-907a83414fc8)
+### image dans dockerhub(version d'image  pour chaque test)
+![image](https://github.com/user-attachments/assets/6ea5d1bb-b3d5-4b95-9214-ee5ee277cf04)
+
 
 
 
