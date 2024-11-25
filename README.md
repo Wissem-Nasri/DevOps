@@ -41,20 +41,20 @@ $ sudo openssl req -x509 -newkey rsa:4096 -keyout /etc/ssl/private/jenkins.local
 ## tester fonctionnemet d'un pipline
 ![image](https://github.com/user-attachments/assets/ce34c72f-1c78-46e0-8fbd-93e12cd936bb)
 
-# Install and Configure the SonarQube
-## Update Package Repository and Upgrade Packages
+# Installer et Configurer SonarQube
+## Mise à jour des dépôts et mise à niveau des paquets
     $ sudo apt update
     $ sudo apt upgrade
-## Add PostgresSQL repository
+## Ajouter le dépôt PostgreSQL
     $ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
     $ wget -qO- https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo tee /etc/apt/trusted.gpg.d/pgdg.asc &>/dev/null
-## Install PostgreSQL
+## Installer PostgreSQL
     $ sudo apt update
     $ sudo apt-get -y install postgresql postgresql-contrib
     $ sudo systemctl enable postgresql
   ![image](https://github.com/user-attachments/assets/65b4f54c-78bd-448e-b483-764f62250ff2)
 
-## Create Database for Sonarqube
+## Créer une base de données pour SonarQube
     $ sudo passwd postgres
     $ su - postgres
     $ createuser sonar
@@ -64,45 +64,45 @@ $ sudo openssl req -x509 -newkey rsa:4096 -keyout /etc/ssl/private/jenkins.local
     $ grant all privileges on DATABASE sonarqube to sonar;
     $ \q
     $ exit
-## Add Adoptium repository
+## Ajouter le dépôt Adoptium
     $ sudo bash
     $ wget -O - https://packages.adoptium.net/artifactory/api/gpg/key/public | tee /etc/apt/keyrings/adoptium.asc
     $ echo "deb [signed-by=/etc/apt/keyrings/adoptium.asc] https://packages.adoptium.net/artifactory/deb $(awk -F= '/^VERSION_CODENAME/{print$2}' /etc/os-release) main" | tee /etc/apt/sources.list.d/adoptium.list
- ## Install Java 17
+ ## Installer Java 17
     $ apt update
     $ apt install temurin-17-jdk
     $ update-alternatives --config java
     $ /usr/bin/java --version
     $ exit 
-## Linux Kernel Tuning
-   # Increase Limits
+## Configuration du noyau Linux
+   # Augmenter les limites
     $ sudo vim /etc/security/limits.conf
-    //Paste the below values at the bottom of the file
+    // ajouter a la fichier 
     sonarqube   -   nofile   65536
     sonarqube   -   nproc    4096
 
-    # Increase Mapped Memory Regions
+    # augmenter les regions memoires mappees
     sudo vim /etc/sysctl.conf
-    //Paste the below values at the bottom of the file
+    //ajouter a la fin de fichier 
     vm.max_map_count = 262144
 
-#### Sonarqube Installation ####
-## Download and Extract
+#### Installation de SonarQube ####
+## Télécharger et extraire
     $ sudo wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.9.0.65466.zip
     $ sudo apt install unzip
     $ sudo unzip sonarqube-9.9.0.65466.zip -d /opt
     $ sudo mv /opt/sonarqube-9.9.0.65466 /opt/sonarqube
-## Create user and set permissions
+## Créer un utilisateur et définir les permissions
      $ sudo groupadd sonar
      $ sudo useradd -c "user to run SonarQube" -d /opt/sonarqube -g sonar sonar
      $ sudo chown sonar:sonar /opt/sonarqube -R
-## Update Sonarqube properties with DB credentials
+## Mettre à jour les propriétés de SonarQube avec les informations de la base de données
      $ sudo vim /opt/sonarqube/conf/sonar.properties
      //Find and replace the below values, you might need to add the sonar.jdbc.url
      sonar.jdbc.username=sonar
      sonar.jdbc.password=sonar
      sonar.jdbc.url=jdbc:postgresql://localhost:5432/sonarqube
-## Create service for Sonarqube
+## Créer un service pour SonarQube
 $ sudo vim /etc/systemd/system/sonar.service
 //Paste the below into the file
      [Unit]
@@ -125,19 +125,18 @@ $ sudo vim /etc/systemd/system/sonar.service
      [Install]
      WantedBy=multi-user.target
 
-## Start Sonarqube and Enable service
+## Démarrer et activer SonarQube
      $ sudo systemctl start sonar
      $ sudo systemctl enable sonar
      $ sudo systemctl status sonar
 ![image](https://github.com/user-attachments/assets/14f2ecff-bb38-4b1d-b966-fda03ede71ce)
 
 
-## Watch log files and monitor for startup
+## Surveiller les journaux
      $ sudo tail -f /opt/sonarqube/logs/sonar.log
-## Étapes pour configurer un Reverse Proxy Nginx avec SonarQube et HTTPS
+##  configurer un Reverse Proxy Nginx avec SonarQube et HTTPS pour sonarqube
 ![image](https://github.com/user-attachments/assets/ef2e0ed0-a21b-43bc-84ef-8253754e4291)
 ## integration betwen sonarqube jenkins
-### generate token from sonarqube
 ![image](https://github.com/user-attachments/assets/1aba68a2-6b1f-46c7-acae-0e35309a49ea)
 ![image](https://github.com/user-attachments/assets/a13965bc-30a5-49f1-b319-9a37cdbfe019)
 ![image](https://github.com/user-attachments/assets/93479703-08ed-4b81-a89c-795226712bbd)
