@@ -3,8 +3,30 @@
 In this DevOps project, I designed and implemented a robust CI/CD pipeline to streamline the development and deployment of applications in a virtualized environment. Using GitHub as the source code management platform, I automated the integration and delivery processes with Jenkins, ensuring consistent builds and testing. Applications were containerized using Docker and published to DockerHub for easy deployment. For orchestration, Kubernetes was employed to manage containerized workloads, while ArgoCD facilitated continuous delivery with GitOps principles. Code quality and security were maintained through SonarQube for static code analysis and Trivy for container vulnerability scanning. Maven was used to build and manage project dependencies, ensuring reliable and efficient builds. Finally, the application was deployed on virtual machines, simulating a real-world environment to ensure scalability, reliability, and performance. This project highlights expertise in automating workflows, enhancing code quality, and deploying secure, scalable solutions.
 ![image](https://github.com/user-attachments/assets/e18256b3-5ee1-434e-915c-ce8512f4b4d9)
 # Jenkins Master-Agent Setup
+## Installation et Configuration de Jenkins-Master et Jenkins-Agent
+## Install Java
+$ sudo apt update
+$ sudo apt install openjdk-17-jre
+## Install Jenkins
+Refer--https://www.jenkins.io/doc/book/installing/linux/
+curl -fsSL https://pkg.jenkins.io/debian/jenkins.io-2023.key | sudo tee \
+  /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+sudo apt-get update
+sudo apt-get install jenkins
 
-Ce dépôt documente la configuration et l'intégration d'une architecture Jenkins comprenant :
+$ sudo systemctl enable jenkins       
+$ sudo systemctl start jenkins       
+$ systemctl status jenkins
+
+$ sudo nano /etc/ssh/sshd_config
+$ sudo service sshd reload
+$ ssh-keygen 
+$ cd .ssh
+
+l' architecture Jenkins comprenant :
 - Un serveur **Jenkins Master** pour la gestion et l'orchestration des pipelines CI/CD.
 - Un nœud **Jenkins Agent** configuré avec Docker pour exécuter les tâches de build et déploiement.
 
@@ -136,5 +158,8 @@ $ sudo vim /etc/systemd/system/sonar.service
      $ sudo tail -f /opt/sonarqube/logs/sonar.log
 ##  configurer un Reverse Proxy Nginx avec SonarQube et HTTPS pour sonarqube
 ![image](https://github.com/user-attachments/assets/ef2e0ed0-a21b-43bc-84ef-8253754e4291)
-## teste de fonctionnement
+## Résultat du Pipeline Jenkins pour le Projet DevOps - Test de Bon Fonctionnement des Stages : Checkout, Build, Test, Analyse SonarQube, Qualité, Build & Push Docker,et Cleanup.
+![image](https://github.com/user-attachments/assets/9f8106b7-e237-49bb-94b1-907a83414fc8)
+
+
 
