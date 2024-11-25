@@ -134,5 +134,12 @@ $ sudo vim /etc/systemd/system/sonar.service
 
 ## Watch log files and monitor for startup
      $ sudo tail -f /opt/sonarqube/logs/sonar.log
-
+## Étapes pour configurer un Reverse Proxy Nginx avec SonarQube et HTTPS
+![image](https://github.com/user-attachments/assets/ef2e0ed0-a21b-43bc-84ef-8253754e4291)
+## integration betwen sonarqube jenkins
+### generate token from sonarqube
+![image](https://github.com/user-attachments/assets/1aba68a2-6b1f-46c7-acae-0e35309a49ea)
+![image](https://github.com/user-attachments/assets/a13965bc-30a5-49f1-b319-9a37cdbfe019)
+![image](https://github.com/user-attachments/assets/93479703-08ed-4b81-a89c-795226712bbd)
+### teste de fonctionnement
 
