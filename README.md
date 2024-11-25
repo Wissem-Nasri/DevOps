@@ -45,6 +45,7 @@ l' architecture Jenkins comprenant :
 ![image](https://github.com/user-attachments/assets/d0838776-0166-4052-882b-f2025e40617d)
 
 - Support pour Docker sur l'Agent pour exécuter des tâches dans des conteneurs.
+ https://docs.docker.com/engine/install/ubuntu/
 
 ![image](https://github.com/user-attachments/assets/2d981b93-c806-4c52-b3a9-7ba81fef6a8b)
 
