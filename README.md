@@ -6,6 +6,7 @@ In this DevOps project, I designed and implemented a robust CI/CD pipeline to st
 ## Installation et Configuration de Jenkins-Master et Jenkins-Agent
 ## Install Java
 $ sudo apt update
+
 $ sudo apt install openjdk-17-jre
 ## Install Jenkins
 Refer--https://www.jenkins.io/doc/book/installing/linux/
