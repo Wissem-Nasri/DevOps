@@ -28,6 +28,17 @@ pipeline {
                 sh "mvn clean package"
             }
         }
+        stage('Build war file') {
+            steps {
+                sh 'mvn clean install -DskipTests=true'
+            }
+        }
+        stage("OWASP Dependency Check") {
+            steps {
+                dependencyCheck additionalArguments: '--scan ./ --format XML', odcInstallation: 'DP-Check'
+                dependencyCheckPublisher pattern: '**/dependency-check-report.xml'
+            }
+        }
         stage("Test Application") {
             steps {
                 sh "mvn test"
@@ -66,7 +77,7 @@ pipeline {
         stage("Trivy Scan") {
             steps {
                 script {
-                       sh "trivy image --timeout 2h ${docker_image.id}"
+                    sh "trivy image --timeout 2h ${docker_image.id}"
                 }
             }
         }
