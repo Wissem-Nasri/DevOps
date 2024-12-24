@@ -176,3 +176,6 @@ $ sudo vim /etc/systemd/system/sonar.service
 =======
 # test
 >>>>>>> 06c18c3 (Initial commit)
+
+
+# Le travail est terminé et je fournirai la trace de travail dans les plus brefs délais.
