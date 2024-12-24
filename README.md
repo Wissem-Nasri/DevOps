@@ -171,4 +171,5 @@ $ sudo vim /etc/systemd/system/sonar.service
 ![image](https://github.com/user-attachments/assets/bf39204b-30a1-43a2-8f49-953f2be84abc)
 
 
-# Le travail est terminé et je fournirai la trace de travail dans les plus brefs délais.
+# Le travail est terminé ! 😊 Je fournirai la trace de travail dans les plus brefs délais.
+
