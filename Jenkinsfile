@@ -22,7 +22,7 @@ pipeline {
         }
         stage("Checkout from SCM") {
             steps {
-                git branch: 'main', credentialsId: 'github', url: 'https://github.com/Wissem-Nasri/Projet-DevOps'
+                git branch: 'main', credentialsId: 'github', url: 'https://github.com/Wissem-Nasri/DevOps'
             }
         }
         stage("Build Application") {
