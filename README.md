@@ -5,12 +5,14 @@ In this DevOps project, I designed and implemented a robust CI/CD pipeline to st
 
 ![Untitled Diagram (21)](https://github.com/user-attachments/assets/6fd7db5f-ead8-464c-a5af-6f9677266e8c)
 
-# Jenkins Master-Agent Setup
-## Installation et Configuration de Jenkins-Master et Jenkins-Agent
-## Install Java
+# Install and Configure the Jenkins-Master & Jenkins-Agent 
 $ sudo apt update
-
+$ sudo apt upgrade
+$ sudo nano /etc/hostname
+$ sudo init 6
 $ sudo apt install openjdk-17-jre
+$ java -version
+
 ## Install Jenkins
 Refer--https://www.jenkins.io/doc/book/installing/linux/
 curl -fsSL https://pkg.jenkins.io/debian/jenkins.io-2023.key | sudo tee \
@@ -21,67 +23,66 @@ echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
 sudo apt-get update
 sudo apt-get install jenkins
 
-$ sudo systemctl enable jenkins       
-$ sudo systemctl start jenkins       
+$ sudo systemctl enable jenkins      
+$ sudo systemctl start jenkins        
 $ systemctl status jenkins
-
 $ sudo nano /etc/ssh/sshd_config
 $ sudo service sshd reload
-$ ssh-keygen 
+$ ssh-keygen OR $ ssh-keygen -t ed25519
 $ cd .ssh
+![image](https://github.com/user-attachments/assets/38d974f2-b7a0-42c3-98e1-0620e382f60e)
 
 l' architecture Jenkins comprenant :
-- Un serveur **Jenkins Master** pour la gestion et l'orchestration des pipelines CI/CD.
-- Un nœud **Jenkins Agent** configuré avec Docker pour exécuter les tâches de build et déploiement.
-
+#### Un serveur Jenkins Master pour la gestion et l'orchestration des pipelines CI/CD.
+#### Un nœud Jenkins Agent configuré avec Docker pour exécuter les tâches de build et déploiement.
 ![image](https://github.com/user-attachments/assets/d234230a-bc9c-48f7-8752-edf19159a0e7)
+#### Authentification sécurisée par clé SSH entre Master et Agent.
+![image](https://github.com/user-attachments/assets/da98b14d-cb4c-4d9d-92b6-763b4ea01d79)
 
-## Fonctionnalités
-- Authentification sécurisée par clé SSH entre Master et Agent.
-  
- ![image](https://github.com/user-attachments/assets/9bb8f6e0-18f5-4668-a9ad-bdcd899f6834)
-
-- Configuration de Jenkins pour désactiver le Master comme nœud de build.
-
-![image](https://github.com/user-attachments/assets/730d4575-322f-4f0e-bc54-0b50edc35fb2)
-
-![image](https://github.com/user-attachments/assets/d0838776-0166-4052-882b-f2025e40617d)
-
-- Support pour Docker sur l'Agent pour exécuter des tâches dans des conteneurs.
- https://docs.docker.com/engine/install/ubuntu/
-
-![image](https://github.com/user-attachments/assets/2d981b93-c806-4c52-b3a9-7ba81fef6a8b)
-
-
-## Objectif
+#### Configuration de Jenkins pour désactiver le Master comme nœud de build.
+![image](https://github.com/user-attachments/assets/0646d0b3-9bc0-4a50-ae35-e45cc235cacb)
+#### Support pour Docker sur l'Agent pour exécuter des tâches dans des conteneurs.
+https://docs.docker.com/engine/install/ubuntu/
+![image](https://github.com/user-attachments/assets/296f7cd2-086a-45ce-afd3-f336bf42404b)
+# Objectif
 Automatiser les workflows CI/CD tout en déléguant les exécutions de tâches à des nœuds distants pour une meilleure scalabilité.
-## nginx reverse proxy for jenkins 
-![image](https://github.com/user-attachments/assets/80c4fc21-755b-488c-b3c3-ca6589bd77cd)
-![image](https://github.com/user-attachments/assets/fdb09aac-bf22-44ef-a03c-57e7c5e55e9d)
-## Créer un certificat SSL auto-signé et accéder via HTTPS pour un accès sécurisé
-$ sudo openssl req -x509 -newkey rsa:4096 -keyout /etc/ssl/private/jenkins.local.key -out /etc/ssl/certs/jenkins.local.crt -days 365 -nodes -subj "/CN=jenkins.local"
+# tester fonctionnemet d'un pipline
+![image](https://github.com/user-attachments/assets/ed140752-f293-4d22-87d7-3aa0fbde279e)
+# install plugin
+## (Dashboard > Manage Jenkins > plugins)
+### maven
+### eclipse 
+### sonar
+### docker 
+# install tools
+## (Dashboard > Manage Jenkins > tools)
+### maven 
+### jdk installations
+### sonarqube scanner installation
+## (Dashboard > Manage Jenkins > system)
+### Sonarqube server
+# credentials 
+## github
+## jenkins-sonarqube-token
+## dockerhub
+## JENKINS_API_TOKEN
+# configuration de test-app (pipline)
+![image](https://github.com/user-attachments/assets/ec867cf2-6db1-4f2b-8be0-70b04a19ef85)
 
-
-![image](https://github.com/user-attachments/assets/a29602f0-4917-4bf9-9e0e-0df6e9a99af4)
-![image](https://github.com/user-attachments/assets/7147638d-f529-438f-be00-180428958c72)
-![image](https://github.com/user-attachments/assets/791912ea-1a5e-4989-bc3f-504e4f366501)
-## tester fonctionnemet d'un pipline
-![image](https://github.com/user-attachments/assets/ce34c72f-1c78-46e0-8fbd-93e12cd936bb)
-
-# Installer et Configurer SonarQube
-## Mise à jour des dépôts et mise à niveau des paquets
+# Install and Configure the SonarQube
+## Update Package Repository and Upgrade Packages
     $ sudo apt update
     $ sudo apt upgrade
-## Ajouter le dépôt PostgreSQL
+## Add PostgresSQL repository
     $ sudo sh -c 'echo "deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main" > /etc/apt/sources.list.d/pgdg.list'
     $ wget -qO- https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo tee /etc/apt/trusted.gpg.d/pgdg.asc &>/dev/null
-## Installer PostgreSQL
+## Install PostgreSQL
     $ sudo apt update
     $ sudo apt-get -y install postgresql postgresql-contrib
     $ sudo systemctl enable postgresql
-  ![image](https://github.com/user-attachments/assets/65b4f54c-78bd-448e-b483-764f62250ff2)
+    ![image](https://github.com/user-attachments/assets/2bde5b52-0bb0-4a32-99c0-49f3c16522b2)
 
-## Créer une base de données pour SonarQube
+## Create Database for Sonarqube
     $ sudo passwd postgres
     $ su - postgres
     $ createuser sonar
@@ -91,45 +92,45 @@ $ sudo openssl req -x509 -newkey rsa:4096 -keyout /etc/ssl/private/jenkins.local
     $ grant all privileges on DATABASE sonarqube to sonar;
     $ \q
     $ exit
-## Ajouter le dépôt Adoptium
+## Add Adoptium repository
     $ sudo bash
     $ wget -O - https://packages.adoptium.net/artifactory/api/gpg/key/public | tee /etc/apt/keyrings/adoptium.asc
     $ echo "deb [signed-by=/etc/apt/keyrings/adoptium.asc] https://packages.adoptium.net/artifactory/deb $(awk -F= '/^VERSION_CODENAME/{print$2}' /etc/os-release) main" | tee /etc/apt/sources.list.d/adoptium.list
- ## Installer Java 17
+ ## Install Java 17
     $ apt update
     $ apt install temurin-17-jdk
     $ update-alternatives --config java
     $ /usr/bin/java --version
     $ exit 
-## Configuration du noyau Linux
-   # Augmenter les limites
+## Linux Kernel Tuning
+   # Increase Limits
     $ sudo vim /etc/security/limits.conf
-    // ajouter a la fichier 
+    //Paste the below values at the bottom of the file
     sonarqube   -   nofile   65536
     sonarqube   -   nproc    4096
 
-    # augmenter les regions memoires mappees
+    # Increase Mapped Memory Regions
     sudo vim /etc/sysctl.conf
-    //ajouter a la fin de fichier 
+    //Paste the below values at the bottom of the file
     vm.max_map_count = 262144
 
-#### Installation de SonarQube ####
-## Télécharger et extraire
+#### Sonarqube Installation ####
+## Download and Extract
     $ sudo wget https://binaries.sonarsource.com/Distribution/sonarqube/sonarqube-9.9.0.65466.zip
     $ sudo apt install unzip
     $ sudo unzip sonarqube-9.9.0.65466.zip -d /opt
     $ sudo mv /opt/sonarqube-9.9.0.65466 /opt/sonarqube
-## Créer un utilisateur et définir les permissions
+## Create user and set permissions
      $ sudo groupadd sonar
      $ sudo useradd -c "user to run SonarQube" -d /opt/sonarqube -g sonar sonar
      $ sudo chown sonar:sonar /opt/sonarqube -R
-## Mettre à jour les propriétés de SonarQube avec les informations de la base de données
+## Update Sonarqube properties with DB credentials
      $ sudo vim /opt/sonarqube/conf/sonar.properties
      //Find and replace the below values, you might need to add the sonar.jdbc.url
      sonar.jdbc.username=sonar
      sonar.jdbc.password=sonar
      sonar.jdbc.url=jdbc:postgresql://localhost:5432/sonarqube
-## Créer un service pour SonarQube
+## Create service for Sonarqube
 $ sudo vim /etc/systemd/system/sonar.service
 //Paste the below into the file
      [Unit]
@@ -152,24 +153,85 @@ $ sudo vim /etc/systemd/system/sonar.service
      [Install]
      WantedBy=multi-user.target
 
-## Démarrer et activer SonarQube
+## Start Sonarqube and Enable service
      $ sudo systemctl start sonar
      $ sudo systemctl enable sonar
      $ sudo systemctl status sonar
-![image](https://github.com/user-attachments/assets/14f2ecff-bb38-4b1d-b966-fda03ede71ce)
+![image](https://github.com/user-attachments/assets/1823441e-7931-47b5-ab35-d50a5b1c2a14)
 
-
-## Surveiller les journaux
+## Watch log files and monitor for startup
      $ sudo tail -f /opt/sonarqube/logs/sonar.log
-##  configurer un Reverse Proxy Nginx avec SonarQube et HTTPS pour sonarqube
-![image](https://github.com/user-attachments/assets/ef2e0ed0-a21b-43bc-84ef-8253754e4291)
-## Résultat du Pipeline Jenkins pour le Projet DevOps - Test de Bon Fonctionnement des Stages : Checkout, Build, Test, Analyse SonarQube, Qualité, Build & Push Docker,trivy scan ,et Cleanup.
+# integrate sonarqube with jenkins 
+### generate token 
+![image](https://github.com/user-attachments/assets/7764f7e2-1bc9-479b-aa4b-e89ffc58213b)
+![image](https://github.com/user-attachments/assets/c5ada1f9-81a7-4b04-9342-24f0d0bdc45d)
+### create webhook
+![image](https://github.com/user-attachments/assets/3c074dba-fd29-4999-83ba-0a354ff4d8e0)
+# build and push docker image using pipline script 
+![image](https://github.com/user-attachments/assets/abc34eb8-64ec-49ed-a347-13d8936878e8)
+# Setting Up a Kubernetes Cluster with Kubeadm and Containerd
+https://www.youtube.com/watch?v=DrcS4jrA_no&t=2113s&pp=ygUTa3ViZXJuZXRlcyBpbnN0YWxsIA%3D%3D
+![image](https://github.com/user-attachments/assets/f244eca0-a2e8-4b18-8892-c05bda8243e2)
 
-![image](https://github.com/user-attachments/assets/c29229cb-f09b-48ce-93d4-ee2b48e5ad92)
+![image](https://github.com/user-attachments/assets/868d8e88-d7da-4fa9-9232-b5f90987ae1b)
 
-### image dans dockerhub(version d'image  pour chaque test)
-![image](https://github.com/user-attachments/assets/bf39204b-30a1-43a2-8f49-953f2be84abc)
+![image](https://github.com/user-attachments/assets/2f0b2e0d-2b85-44a1-b4c8-0e3d0974e2ca)
+
+# ArgoCD Installation on EKS Cluster and Add EKS Cluster to ArgoCD
+1 ) First, create a namespace
+    $ kubectl create namespace argocd
+
+2 ) Next, let's apply the yaml configuration files for ArgoCd
+    $ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
+
+3 ) Now we can view the pods created in the ArgoCD namespace.
+    $ kubectl get pods -n argocd
+
+![image](https://github.com/user-attachments/assets/6d63eede-f7ef-407d-a619-8f9ec0c95f8f)
+
+4 ) To interact with the API Server we need to deploy the CLI:
+    $ curl --silent --location -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/download/v2.4.7/argocd-linux-amd64
+    $ chmod +x /usr/local/bin/argocd
+
+5 ) Expose argocd-server
+    $ kubectl patch svc argocd-server -n argocd -p '{"spec": {"type": "NodePort"}}' 
 
 
-# Le travail est terminé ! 😊 Je fournirai la trace de travail dans les plus brefs délais.
+6 ) Wait about 2 minutes for the NodePort creation
+    $ kubectl get svc -n argocd
+
+![image](https://github.com/user-attachments/assets/fbef1c61-a68e-4623-a6f8-4a1ca17c98ae)
+
+7 ) Get pasword and decode it.
+    $ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
+
+![image](https://github.com/user-attachments/assets/03cf884f-3408-4b07-92b1-75ace8d7e8f1)
+
+
+## Add  Cluster to ArgoCD
+9 ) login to ArgoCD from CLI
+    $ argocd login https://192.168.122.187:31381 --username admin
+
+10 ) 
+     $ argocd cluster list
+
+11 ) Below command will show the  cluster
+     $ kubectl config get-contexts
+
+12 ) Add above cluster to ArgoCD with below command
+     $ argocd cluster add  kubernetes-admin@kubernetes --name vmware-OwnCluster
+![image](https://github.com/user-attachments/assets/e078dbfb-ff36-4159-a05c-3318818d2548)
+
+![image](https://github.com/user-attachments/assets/b689e50e-025f-4685-944d-4c5f463f449c)
+
+
+13 ) $ kubectl get svc
+![image](https://github.com/user-attachments/assets/e4ed8bae-dfbd-4aa0-ac56-31dba7b2deb7)
+# configure argocd to Deploy pods on kubernities and automate argocd Deployment Job using Gitops Github Repository 
+## create applicaation in cluster 
+![image](https://github.com/user-attachments/assets/4e588e03-270e-48ce-b0ff-b3a4771559af)
+![image](https://github.com/user-attachments/assets/71f4cad9-9308-494e-b851-888c4c6a660d)
+![image](https://github.com/user-attachments/assets/e8de6fee-3fdf-4771-9862-ff43497f8fc5)
+## gitops-automation 
+![image](https://github.com/user-attachments/assets/ea289511-4124-4b49-b716-514a2b6e83a9)
 
