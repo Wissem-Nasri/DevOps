@@ -30,25 +30,39 @@ $ sudo nano /etc/ssh/sshd_config
 $ sudo service sshd reload
 $ ssh-keygen OR $ ssh-keygen -t ed25519
 $ cd .ssh
+
 ![image](https://github.com/user-attachments/assets/38d974f2-b7a0-42c3-98e1-0620e382f60e)
 
 l' architecture Jenkins comprenant :
 #### Un serveur Jenkins Master pour la gestion et l'orchestration des pipelines CI/CD.
 #### Un nœud Jenkins Agent configuré avec Docker pour exécuter les tâches de build et déploiement.
+
 ![image](https://github.com/user-attachments/assets/d234230a-bc9c-48f7-8752-edf19159a0e7)
+
 #### Authentification sécurisée par clé SSH entre Master et Agent.
+
 ![image](https://github.com/user-attachments/assets/da98b14d-cb4c-4d9d-92b6-763b4ea01d79)
 
 #### Configuration de Jenkins pour désactiver le Master comme nœud de build.
+
 ![image](https://github.com/user-attachments/assets/0646d0b3-9bc0-4a50-ae35-e45cc235cacb)
 #### Support pour Docker sur l'Agent pour exécuter des tâches dans des conteneurs.
+
 https://docs.docker.com/engine/install/ubuntu/
+
 ![image](https://github.com/user-attachments/assets/296f7cd2-086a-45ce-afd3-f336bf42404b)
+
 # Objectif
+
 Automatiser les workflows CI/CD tout en déléguant les exécutions de tâches à des nœuds distants pour une meilleure scalabilité.
+
+
 # tester fonctionnemet d'un pipline
+
 ![image](https://github.com/user-attachments/assets/ed140752-f293-4d22-87d7-3aa0fbde279e)
+
 # install plugin
+
 ## (Dashboard > Manage Jenkins > plugins)
 ### maven
 ### eclipse 
@@ -66,6 +80,7 @@ Automatiser les workflows CI/CD tout en déléguant les exécutions de tâches �
 ## jenkins-sonarqube-token
 ## dockerhub
 ## JENKINS_API_TOKEN
+
 ![image](https://github.com/user-attachments/assets/46e59a95-9987-443e-9892-6b43f20e9d0b)
 
 # configuration de test-app (pipline)
