@@ -66,6 +66,8 @@ Automatiser les workflows CI/CD tout en déléguant les exécutions de tâches �
 ## jenkins-sonarqube-token
 ## dockerhub
 ## JENKINS_API_TOKEN
+![image](https://github.com/user-attachments/assets/46e59a95-9987-443e-9892-6b43f20e9d0b)
+
 # configuration de test-app (pipline)
 ![image](https://github.com/user-attachments/assets/ec867cf2-6db1-4f2b-8be0-70b04a19ef85)
 
@@ -234,4 +236,19 @@ https://www.youtube.com/watch?v=DrcS4jrA_no&t=2113s&pp=ygUTa3ViZXJuZXRlcyBpbnN0Y
 ![image](https://github.com/user-attachments/assets/e8de6fee-3fdf-4771-9862-ff43497f8fc5)
 ## gitops-automation 
 ![image](https://github.com/user-attachments/assets/ea289511-4124-4b49-b716-514a2b6e83a9)
+## before making changes in code 
+![image](https://github.com/user-attachments/assets/173866c3-3a36-4ebb-8d0a-0d3c86124578)
+![image](https://github.com/user-attachments/assets/972fc59a-8ec9-40dc-8cb9-5748e5a73516)
+## after making changes 
+![image](https://github.com/user-attachments/assets/e2a38fe5-5d44-4517-878c-06174032c36c)
+#### sonarqube (passed)
+![image](https://github.com/user-attachments/assets/08b79c7f-191d-4d9c-9249-e6713400a476)
+#### deployment app (current version ) 
+
+![image](https://github.com/user-attachments/assets/2860769e-f07a-4d3b-b096-9d28694e8f55)
+
+![image](https://github.com/user-attachments/assets/93058af6-c2c8-4c0d-801b-0ec4f63c3d7f)
+
+![image](https://github.com/user-attachments/assets/f85238a0-8c2e-4969-8b6d-7448fd118eb8)
+
 
