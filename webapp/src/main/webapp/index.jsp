@@ -31,7 +31,7 @@
     <p>Already have an account? <a href="#">Sign in</a>.</p>
   </div>
 
-   <h1> Hello World SSIRD wiss </h1>
+   <h1> Hello World  wiss </h1>
    
    
 </form>
