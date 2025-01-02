@@ -220,13 +220,14 @@ https://www.youtube.com/watch?v=DrcS4jrA_no&t=2113s&pp=ygUTa3ViZXJuZXRlcyBpbnN0Y
 
 ![image](https://github.com/user-attachments/assets/26520221-d8c5-48e9-bffa-869a7d6d6177)
 
-![image](https://github.com/user-attachments/assets/45fc3d98-7752-4560-8d59-526f2f46a188)
 
 7 ) Get pasword and decode it.
 
     $ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 
-![image](https://github.com/user-attachments/assets/03cf884f-3408-4b07-92b1-75ace8d7e8f1)
+![image](https://github.com/user-attachments/assets/45fc3d98-7752-4560-8d59-526f2f46a188)
+
+![image](https://github.com/user-attachments/assets/fd42688c-820a-4e24-85b5-da35cc36a363)
 
 
 ## Add  Cluster to ArgoCD
@@ -244,14 +245,16 @@ https://www.youtube.com/watch?v=DrcS4jrA_no&t=2113s&pp=ygUTa3ViZXJuZXRlcyBpbnN0Y
      $ argocd cluster add  kubernetes-admin@kubernetes --name vmware-OwnCluster
 ![image](https://github.com/user-attachments/assets/e078dbfb-ff36-4159-a05c-3318818d2548)
 
-![image](https://github.com/user-attachments/assets/b689e50e-025f-4685-944d-4c5f463f449c)
+![image](https://github.com/user-attachments/assets/29dc8a75-3db5-4b21-8756-af906714c611)
 
 
 13 ) $ kubectl get svc
+
 ![image](https://github.com/user-attachments/assets/e4ed8bae-dfbd-4aa0-ac56-31dba7b2deb7)
+
 # configure argocd to Deploy pods on kubernities and automate argocd Deployment Job using Gitops Github Repository 
 ## create applicaation in cluster 
-![image](https://github.com/user-attachments/assets/4e588e03-270e-48ce-b0ff-b3a4771559af)
+![image](https://github.com/user-attachments/assets/5d247193-ece2-4a95-a319-ba0eaff8b3c6)
 ![image](https://github.com/user-attachments/assets/71f4cad9-9308-494e-b851-888c4c6a660d)
 ![image](https://github.com/user-attachments/assets/e8de6fee-3fdf-4771-9862-ff43497f8fc5)
 ## gitops-automation 
