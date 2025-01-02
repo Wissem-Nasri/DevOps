@@ -252,11 +252,17 @@ https://www.youtube.com/watch?v=DrcS4jrA_no&t=2113s&pp=ygUTa3ViZXJuZXRlcyBpbnN0Y
 ## gitops-automation 
 ![image](https://github.com/user-attachments/assets/ea289511-4124-4b49-b716-514a2b6e83a9)
 ## before making changes in code 
-![image](https://github.com/user-attachments/assets/173866c3-3a36-4ebb-8d0a-0d3c86124578)
-![image](https://github.com/user-attachments/assets/972fc59a-8ec9-40dc-8cb9-5748e5a73516)
+![image](https://github.com/user-attachments/assets/aa7015f1-60d8-4414-ba8a-6f3b3fc5fcf2)
+
+![image](https://github.com/user-attachments/assets/dfbaf8a9-8b91-44fa-bd07-8b2f9c677cf7)
+
+![image](https://github.com/user-attachments/assets/cde966c2-8a4b-486b-bfe1-0a4972a18708)
+
+
 ## after making changes 
 
-![image](https://github.com/user-attachments/assets/e2a38fe5-5d44-4517-878c-06174032c36c)
+![image](https://github.com/user-attachments/assets/bc54d56c-71ba-4c8b-bb36-3efcbd8f5351)
+
 ### pipline
 
 ![image](https://github.com/user-attachments/assets/0973dc6c-a7f6-4e28-bc44-8c7d3c0647fd)
@@ -267,11 +273,12 @@ https://www.youtube.com/watch?v=DrcS4jrA_no&t=2113s&pp=ygUTa3ViZXJuZXRlcyBpbnN0Y
 ![image](https://github.com/user-attachments/assets/08b79c7f-191d-4d9c-9249-e6713400a476)
 #### deployment app (current version ) 
 
-![image](https://github.com/user-attachments/assets/2860769e-f07a-4d3b-b096-9d28694e8f55)
+![image](https://github.com/user-attachments/assets/0c8d160b-ff0a-4d0e-904e-041987848234)
 
-![image](https://github.com/user-attachments/assets/93058af6-c2c8-4c0d-801b-0ec4f63c3d7f)
+![image](https://github.com/user-attachments/assets/f69108fa-d905-401c-ad85-e61f906b9d00)
 
-![image](https://github.com/user-attachments/assets/f85238a0-8c2e-4969-8b6d-7448fd118eb8)
+![image](https://github.com/user-attachments/assets/39e88ea8-9ddb-450c-a590-33c933e0adb7)
 
-![image](https://github.com/user-attachments/assets/eb61b05f-0f7a-440d-949d-f55d896eb14a)
+![image](https://github.com/user-attachments/assets/a708b071-ba4e-4a42-929f-8db63b451eac)
+
 
