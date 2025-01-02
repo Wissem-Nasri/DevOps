@@ -222,6 +222,7 @@ https://www.youtube.com/watch?v=DrcS4jrA_no&t=2113s&pp=ygUTa3ViZXJuZXRlcyBpbnN0Y
 
 
 7 ) Get pasword and decode it.
+
     $ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
 
 ![image](https://github.com/user-attachments/assets/03cf884f-3408-4b07-92b1-75ace8d7e8f1)
@@ -229,7 +230,8 @@ https://www.youtube.com/watch?v=DrcS4jrA_no&t=2113s&pp=ygUTa3ViZXJuZXRlcyBpbnN0Y
 
 ## Add  Cluster to ArgoCD
 9 ) login to ArgoCD from CLI
-    $ argocd login https://192.168.122.187:31381 --username admin
+
+    $ argocd login https://192.168.122.187:30473 --username admin
 
 10 ) 
      $ argocd cluster list
