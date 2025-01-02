@@ -204,7 +204,9 @@ https://www.youtube.com/watch?v=DrcS4jrA_no&t=2113s&pp=ygUTa3ViZXJuZXRlcyBpbnN0Y
 3 ) Now we can view the pods created in the ArgoCD namespace.
     $ kubectl get pods -n argocd
 
-![image](https://github.com/user-attachments/assets/6d63eede-f7ef-407d-a619-8f9ec0c95f8f)
+![image](https://github.com/user-attachments/assets/26520221-d8c5-48e9-bffa-869a7d6d6177)
+
+![image](https://github.com/user-attachments/assets/0d4ba05f-4a0b-46f2-8642-2908496b8287)
 
 4 ) To interact with the API Server we need to deploy the CLI:
     $ curl --silent --location -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/download/v2.4.7/argocd-linux-amd64
