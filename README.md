@@ -255,6 +255,11 @@ https://www.youtube.com/watch?v=DrcS4jrA_no&t=2113s&pp=ygUTa3ViZXJuZXRlcyBpbnN0Y
 ![image](https://github.com/user-attachments/assets/173866c3-3a36-4ebb-8d0a-0d3c86124578)
 ![image](https://github.com/user-attachments/assets/972fc59a-8ec9-40dc-8cb9-5748e5a73516)
 ## after making changes 
+
+![image](https://github.com/user-attachments/assets/0973dc6c-a7f6-4e28-bc44-8c7d3c0647fd)
+
+![image](https://github.com/user-attachments/assets/f0beee56-baea-42d4-a6b6-fe0abc779e90)
+
 ![image](https://github.com/user-attachments/assets/e2a38fe5-5d44-4517-878c-06174032c36c)
 #### sonarqube (passed)
 ![image](https://github.com/user-attachments/assets/08b79c7f-191d-4d9c-9249-e6713400a476)
