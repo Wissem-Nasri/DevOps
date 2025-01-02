@@ -202,11 +202,10 @@ https://www.youtube.com/watch?v=DrcS4jrA_no&t=2113s&pp=ygUTa3ViZXJuZXRlcyBpbnN0Y
     $ kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 
 3 ) Now we can view the pods created in the ArgoCD namespace.
+
     $ kubectl get pods -n argocd
 
-![image](https://github.com/user-attachments/assets/26520221-d8c5-48e9-bffa-869a7d6d6177)
-
-![image](https://github.com/user-attachments/assets/0d4ba05f-4a0b-46f2-8642-2908496b8287)
+![image](https://github.com/user-attachments/assets/c0c26238-2eae-4730-8fb1-68e649f27b41)
 
 4 ) To interact with the API Server we need to deploy the CLI:
     $ curl --silent --location -o /usr/local/bin/argocd https://github.com/argoproj/argo-cd/releases/download/v2.4.7/argocd-linux-amd64
@@ -219,7 +218,8 @@ https://www.youtube.com/watch?v=DrcS4jrA_no&t=2113s&pp=ygUTa3ViZXJuZXRlcyBpbnN0Y
 6 ) Wait about 2 minutes for the NodePort creation
     $ kubectl get svc -n argocd
 
-![image](https://github.com/user-attachments/assets/fbef1c61-a68e-4623-a6f8-4a1ca17c98ae)
+![image](https://github.com/user-attachments/assets/26520221-d8c5-48e9-bffa-869a7d6d6177)
+
 
 7 ) Get pasword and decode it.
     $ kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d
