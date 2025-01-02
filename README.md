@@ -220,6 +220,7 @@ https://www.youtube.com/watch?v=DrcS4jrA_no&t=2113s&pp=ygUTa3ViZXJuZXRlcyBpbnN0Y
 
 ![image](https://github.com/user-attachments/assets/26520221-d8c5-48e9-bffa-869a7d6d6177)
 
+![image](https://github.com/user-attachments/assets/45fc3d98-7752-4560-8d59-526f2f46a188)
 
 7 ) Get pasword and decode it.
 
